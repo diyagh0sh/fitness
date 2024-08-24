@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker - No limits Fitness Coaching</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tracker-form {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tracker-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .tracker-form input,
+        .tracker-form select,
+        .tracker-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .tracker-form button {
+            background-color: #2c3e50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .tracker-form button:hover {
+            background-color: #34495e;
+        }
+
+        .tracker-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .tracker-table th,
+        .tracker-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .tracker-table th {
+            background-color: #2c3e50;
+            color: #fff;
+        }
+
+        .tracker-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Fitness Tracker</h2>
+
+<div class="tracker-form">
+    <form id="fitnessTrackerForm">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="exercise">Exercise:</label>
+        <input type="text" id="exercise" name="exercise" placeholder="e.g., Running, Yoga" required>
+
+        <label for="duration">Duration (minutes):</label>
+        <input type="number" id="duration" name="duration" placeholder="e.g., 30" required>
+
+        <label for="calories">Calories Burned:</label>
+        <input type="number" id="calories" name="calories" placeholder="e.g., 200" required>
+
+        <button type="button" onclick="addWorkout()">Add Workout</button>
+    </form>
+</div>
+
+<table class="tracker-table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Exercise</th>
+            <th>Duration (minutes)</th>
+            <th>Calories Burned</th>
+        </tr>
+    </thead>
+    <tbody id="workoutLog">
+        <!-- Workout entries will be added here -->
+    </tbody>
+</table>
+
+<script>
+    function addWorkout() {
+        // Get form values
+        const date = document.getElementById('date').value;
+        const exercise = document.getElementById('exercise').value;
+        const duration = document.getElementById('duration').value;
+        const calories = document.getElementById('calories').value;
+
+        // Create a new row
+        const newRow = document.createElement('tr');
+
+        // Add data to the row
+        newRow.innerHTML = `
+            <td>${date}</td>
+            <td>${exercise}</td>
+            <td>${duration}</td>
+            <td>${calories}</td>
+        `;
+
+        // Append the new row to the table
+        document.getElementById('workoutLog').appendChild(newRow);
+
+        // Reset the form
+        document.getElementById('fitnessTrackerForm').reset();
+    }
+</script>
+
+</body>
+</html>

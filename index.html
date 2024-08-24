@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Limits Fitness Coaching</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-buttons a {
+            color: #fff;
+            background-color: #e74c3c;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            margin-left: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+        }
+
+        .try-for-free {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .try-for-free a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #b04034;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .try-for-free a:hover {
+            background-color: #133e01;
+            transform: translateY(-3px);
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .banner-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .banner {
+            background-image: url("a-powerful-and-motivating-fitness-inspired-backgro-4MUMoTTQQnGibe6KDD3J0Q-XRuvSUSFTGW2x7pytpWiIQ.jpeg");
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            color: rgb(17, 163, 180);
+        }
+
+        .tracker {
+            width: 35%;
+            margin-left: 20px;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .service {
+            background-color: rgb(186, 109, 125);
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+        }
+
+        .service h2 {
+            margin-bottom: 10px;
+        }
+
+        .service img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            margin-bottom: 20px;
+        }
+
+        .service a {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .service a:hover {
+            background-color: #34495e;
+        }
+
+        .bmr-link {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .bmr-link a {
+            color: #00796b;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .bmr-link a:hover {
+            text-decoration: underline;
+        }
+
+        .goal-tracker-link {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .goal-tracker-link a {
+            color: #e74c3c;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.3em;
+        }
+
+        .goal-tracker-link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .tracker-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            text-align: center;
+        }
+
+        .tracker h1 {
+            color: #00796b;
+            margin-bottom: 30px;
+            font-size: 26px;
+        }
+
+        .habit {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .habit input[type="checkbox"] {
+            margin-right: 15px;
+            transform: scale(1.2);
+        }
+
+        .habit-icon {
+            font-size: 24px;
+            color: #004d40;
+            margin-right: 10px;
+        }
+
+        .summary {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #004d40;
+            font-weight: 600;
+        }
+
+        .tracker-container:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to No Limits Fitness Coaching</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <div class="nav-buttons">
+            <a href="login.html">Sign Up/Login</a>
+            <a href="tryforfree.html">Try for Free</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="banner-container">
+            <section class="banner" id="home">
+                <h1>Get Fit, Stay Healthy</h1>
+            </section>
+            <div class="tracker">
+                <div class="tracker-container">
+                    <h1>Healthy Habits Tracker</h1>
+                    <div class="habit">
+                        <i class="habit-icon">💧</i>
+                        <input type="checkbox" id="water">
+                        <label for="water">Drink 8 glasses of water</label>
+                    </div>
+                    <div class="habit">
+                        <i class="habit-icon">🏃‍♀️</i>
+                        <input type="checkbox" id="exercise">
+                        <label for="exercise">30 minutes of exercise</label>
+                    </div>
+                    <div class="habit">
+                        <i class="habit-icon">🍎</i>
+                        <input type="checkbox" id="fruits">
+                        <label for="fruits">Eat 5 servings of fruits/vegetables</label>
+                    </div>
+                    <div class="habit">
+                        <i class="habit-icon">🛌</i>
+                        <input type="checkbox" id="sleep">
+                        <label for="sleep">Get 7-8 hours of sleep</label>
+                    </div>
+                    <div class="summary" id="summary">
+                        Track your habits!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="bmr-link">
+            <p>Are you healthy? <a href="bmr.html">Check it by clicking here</a></p>
+        </section>
+
+        <section class="goal-tracker-link">
+            <p>Try our new <a href="tracker.html">Track Your Goal</a> feature by clicking below.</p>
+        </section>
+
+        <section class="services" id="services">
+            <div class="service">
+                <h2>Personal Training</h2>
+                <img src="https://images.squarespace-cdn.com/content/v1/5f0f4485c43a8465bbedc0b2/1643216442410-103UZTQQ8I3XNQS1AV4X/unsplash-image-lrQPTQs7nQQ.jpg" alt="Personal Training">
+                <p>Customized training programs to lighten up your inner strength.</p>
+                <a href="personaltraining.html">Learn More</a>
+            </div>
+            <div class="service">
+                <h2>Group Classes</h2>
+                <img src="https://st4.depositphotos.com/1022135/25748/i/450/depositphotos_257486682-stock-photo-group-young-people-sportswear-talking.jpg">
+                <p>Join our group sessions for a fun and engaging workout.</p>
+                <a href="join.html">Join a Class</a>
+            </div>
+            <div class="service">
+                <h2>Nutrition Plans</h2>
+                <img src="https://media.istockphoto.com/id/1363588189/photo/healthy-lifestyle-on-ketogenic-diet-eating-clean-keto-food-good-health-dietary-in-heart-dish.jpg?s=612x612&w=0&k=20&c=RVW_a2Bq3eYeUWqkUbTUHkiQbGJaAMa9Q2fyljGymgY=" alt="Nutrition Plans">
+                <p>Personalized nutrition plans to complement your fitness regime.<h6>Stay healthy stay Fit.</h6></p>
+                <a href="learn.html">Get a Plan</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: <a href="mailto:diya@fitness.com">diya@fitness.com</a></p>
+            <p>Phone: +91 9475525186</p>
+            <p>Address: Siliguri, Haiderpara</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 No limits Fitness Coaching. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

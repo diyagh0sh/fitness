@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Group Training - Diya's Fitness</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d2d2d;
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #565656;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1em;
+            background-color: #f7f7f7;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #55a3d3;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .form-group button {
+            width: 100%;
+            background-color: #55a3d3;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+
+        .form-group button:hover {
+            background-color: #4691b8;
+        }
+
+        .thank-you {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .thank-you h2 {
+            font-size: 2em;
+            color: #2d2d2d;
+            margin-bottom: 20px;
+        }
+
+        .thank-you p {
+            font-size: 1.3em;
+            color: #555;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .form-container, .thank-you {
+                padding: 20px;
+                margin: 10px auto;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .form-container h2, .thank-you h2 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Join Our Group Training</h1>
+
+<div class="form-container">
+    <h2>Sign Up for Your Preferred Class</h2>
+    <form id="groupTrainingForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Mobile No:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="classTime">Preferred Class Timing:</label>
+            <select id="classTime" name="classTime" required>
+                <option value="6 AM - 7 AM">6 AM - 7 AM</option>
+                <option value="8 AM - 9 AM">8 AM - 9 AM</option>
+                <option value="5 PM - 6 PM">5 PM - 6 PM</option>
+                <option value="7 PM - 8 PM">7 PM - 8 PM</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Join Now</button>
+        </div>
+    </form>
+</div>
+
+<!-- Thank You Page -->
+<div id="thankYouPage" class="thank-you" style="display:none;">
+    <h2>Thank You!</h2>
+    <p>Your ticket with our fitness train is confirmed. An email with joining details will be sent shortly.</p>
+</div>
+
+<script>
+    // Handle form submission
+    document.getElementById('groupTrainingForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Hide the form and show the thank you message
+        document.querySelector('.form-container').style.display = 'none';
+        document.getElementById('thankYouPage').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>

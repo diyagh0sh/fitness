@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Plan Subscription - No limits Fitness</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d2d2d;
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .subscription-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .subscription-container h2 {
+            text-align: center;
+            color: #565656;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .subscription-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .option-card {
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            width: 30%;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .option-card h3 {
+            font-size: 1.6em;
+            color: #2d2d2d;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .option-card p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .option-card button {
+            background-color: #55a3d3;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+
+        .option-card button:hover {
+            background-color: #4691b8;
+        }
+
+        .thank-you {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .thank-you h2 {
+            font-size: 2em;
+            color: #2d2d2d;
+            margin-bottom: 20px;
+        }
+
+        .thank-you p {
+            font-size: 1.3em;
+            color: #555;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .subscription-options {
+                flex-direction: column;
+            }
+
+            .option-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .option-card:last-child {
+                margin-bottom: 0;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .subscription-container h2, .thank-you h2 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Nutrition Plan Subscription</h1>
+
+<div class="subscription-container">
+    <h2>Choose Your Plan</h2>
+    <div class="subscription-options">
+        <div class="option-card">
+            <h3>Weekly Plan</h3>
+            <p>₹150 per week</p>
+            <button onclick="subscribe('Weekly Plan')">Buy Now</button>
+        </div>
+        <div class="option-card">
+            <h3>Monthly Plan</h3>
+            <p>₹500 per month</p>
+            <button onclick="subscribe('Monthly Plan')">Buy Now</button>
+        </div>
+        <div class="option-card">
+            <h3>Yearly Plan</h3>
+            <p>₹2000 per year</p>
+            <button onclick="subscribe('Yearly Plan')">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<!-- Thank You Page -->
+<div id="thankYouPage" class="thank-you" style="display:none;">
+    <h2>Thank You!</h2>
+    <p>Your subscription is confirmed. An email with your plan details will be sent shortly.</p>
+</div>
+
+<script>
+    function subscribe(plan) {
+        // Hide the subscription options and show the thank you message
+        document.querySelector('.subscription-container').style.display = 'none';
+        document.getElementById('thankYouPage').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

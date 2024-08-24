@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More - Fitness Coaching</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #34495e;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .course-container {
+            margin-bottom: 20px;
+        }
+
+        .course {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .course h2 {
+            margin-bottom: 10px;
+        }
+
+        .course p {
+            margin-bottom: 15px;
+        }
+
+        .course .price {
+            font-size: 1.2em;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .review-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .review-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .review-container form {
+            margin-bottom: 20px;
+        }
+
+        .review-container input,
+        .review-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .review-container button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #2c3e50;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .review-container button:hover {
+            background-color: #34495e;
+        }
+
+        .reviews {
+            margin-top: 20px;
+        }
+
+        .review {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .review p {
+            margin-bottom: 10px;
+        }
+
+        .review .customer-name {
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Learn More - No Fitness Coaching</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#reviews">Reviews</a>
+    </nav>
+
+    <main>
+        <section id="courses" class="course-container">
+            <div class="course">
+                <h2>Basic Fitness Program</h2>
+                <p>Get started with our basic fitness program designed for beginners. This program covers fundamental exercises and routines to kickstart your fitness journey.</p>
+                <p class="price">Price: ₹99</p>
+            </div>
+            <div class="course">
+                <h2>Advanced Strength Training</h2>
+                <p>Our advanced strength training program is perfect for those looking to take their fitness to the next level. Includes advanced exercises and personalized coaching.</p>
+                <p class="price">Price: ₹149</p>
+            </div>
+            <div class="course">
+                <h2>Nutrition and Wellness Plan</h2>
+                <p>Complement your fitness with our comprehensive nutrition and wellness plan. Includes personalized meal plans and wellness tips to support your fitness goals.</p>
+                <p class="price">Price: ₹119</p>
+            </div>
+        </section>
+
+        <section id="reviews" class="review-container">
+            <h2>Leave a Review</h2>
+            <form id="reviewForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <textarea id="reviewText" rows="4" placeholder="Your Review" required></textarea>
+                <button type="submit">Submit Review</button>
+            </form>
+
+            <div class="reviews" id="reviews">
+                <div class="review">
+                    <p class="customer-name">Jane Doe:</p>
+                    <p>"The Basic Fitness Program was fantastic for getting me started. The routines were easy to follow and effective!"</p>
+                </div>
+                <div class="review">
+                    <p class="customer-name">John Smith:</p>
+                    <p>"Advanced Strength Training pushed me to new limits. The personalized coaching was a game changer."</p>
+                </div>
+                <div class="review">
+                    <p class="customer-name">Emily Johnson:</p>
+                    <p>"The Nutrition and Wellness Plan helped me balance my diet with my fitness goals. Highly recommend it!"</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 No limits Fitness Coaching. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const reviewText = document.getElementById('reviewText').value;
+
+            if (name && reviewText) {
+                const reviewContainer = document.getElementById('reviews');
+                const newReview = document.createElement('div');
+                newReview.className = 'review';
+                newReview.innerHTML = `<p class="customer-name">${name}:</p><p>${reviewText}</p>`;
+                reviewContainer.prepend(newReview);
+
+                document.getElementById('name').value = '';
+                document.getElementById('reviewText').value = '';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
